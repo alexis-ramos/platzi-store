@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './../../../core/models/product.model';
+import { CartService } from '../../../core/service/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -12,15 +13,10 @@ export class ProductComponent {
 
   today = new Date();
 
+  constructor(private cartService: CartService) {}
+
   addCar() {
     console.log('añadir al carrito');
-    this.productClicked.emit(this.product.id);
+    this.cartService.addCart(this.product);
   }
-  // = {
-  //   id: '1',
-  //   image: 'assets/images/camiseta.png',
-  //   title: 'Camiseta',
-  //   price: 80000,
-  //   description: 'bla bla bla bla bla',
-  // };
 }

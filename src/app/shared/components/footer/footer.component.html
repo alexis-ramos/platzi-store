@@ -30,11 +30,9 @@
         <div class="box">
           <h3>Contacto</h3>
           <mat-form-field>
-            <input type="email" [formControl]="emailField" matImput placeholder="Digite su correo" />
+            <input matInput placeholder="Digite su correo" [formControl]="emailField" type="email" />
           </mat-form-field>
-          <button mat-raised-button [disabled]="emailField.valid" (click)="sendMail()">Enviar</button>
-          <!-- {{ emailField.valid }},
-          {{ emailField.invalid }} -->
+          <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
         </div>
       </div>
     </div>
